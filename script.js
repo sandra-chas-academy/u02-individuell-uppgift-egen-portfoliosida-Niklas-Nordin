@@ -1,3 +1,5 @@
+// Importerar mina jobb via experience.json
+
 async function experience() {
     
     try {
@@ -56,6 +58,8 @@ async function experience() {
 }
 experience();
 
+// Importerar mina utbildningar via experience.json
+
 async function educations() {
 
     try {
@@ -112,3 +116,17 @@ async function educations() {
 }
 educations();
 
+
+// Nav-list i hamburgermenyn i mobilversion...
+
+
+const hamburgerMenu = document.getElementById("hamburger-menu1");
+const slidebar = document.getElementById("slidebar");
+
+hamburgerMenu.addEventListener("click", click);
+function click() {
+    hamburgerMenu.classList.toggle('active');
+    slidebar.classList.toggle('active');
+    document.getElementById("hej").innerHTML = "hej";
+
+}

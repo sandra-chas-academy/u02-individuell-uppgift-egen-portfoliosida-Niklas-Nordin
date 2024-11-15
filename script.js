@@ -1,16 +1,19 @@
 // Importerar mina jobb via experience.json
-
 async function experience() {
     
     try {
-        const response = await fetch("/experience.json");
+        const response = await fetch("../experience.json");
 
         if(!response.ok) {
             throw new Error("Kunde inte ladda data...");
         }
 
         const data = await response.json();
-        const myExperience = document.getElementById("experience")
+        const myExperience = document.getElementById("experience");
+        const myExperience2 = document.createElement("div");
+        myExperience2.id = "experience2";
+
+
         const jobs = data.educations.jobs;
 
 
@@ -63,7 +66,7 @@ experience();
 async function educations() {
 
     try {
-        const responseEducation = await fetch("/experience.json");
+        const responseEducation = await fetch("../experience.json");
 
         if(!responseEducation.ok) {
             throw new Error("Kunde inte ladda data...");
@@ -72,6 +75,8 @@ async function educations() {
         const dataEducation = await responseEducation.json();
 
         const educations = document.getElementById("education");
+        // const educations = document.createElement("div");
+        // educations.classList.add("education");
         const study = dataEducation.educations.studies;
 
         for(i = 0; i < study.length; i++) {
@@ -122,11 +127,11 @@ educations();
 
 const hamburgerMenu = document.getElementById("hamburger-menu1");
 const slidebar = document.getElementById("slidebar");
+const closeSidebar = document.getElementById("close");
 
 hamburgerMenu.addEventListener("click", click);
+closeSidebar.addEventListener("click", click);
 function click() {
-    hamburgerMenu.classList.toggle('active');
-    slidebar.classList.toggle('active');
-    document.getElementById("hej").innerHTML = "hej";
-
+    hamburgerMenu.classList.toggle("active");
+    slidebar.classList.toggle("active");
 }

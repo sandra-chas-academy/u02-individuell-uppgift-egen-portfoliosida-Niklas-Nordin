@@ -1,5 +1,6 @@
 :root {
     --bluepurple: linear-gradient(to left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));
+    --bluepurple-topleft: linear-gradient(to top left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));
     --title: rgba(102, 102, 102, 1);
     --info: rgba(167, 167, 167, 1);
     --button-text: rgba(1, 140, 15, 1);

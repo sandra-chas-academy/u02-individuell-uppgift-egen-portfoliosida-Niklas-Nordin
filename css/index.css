@@ -23,13 +23,12 @@ header {
 .slidebar {
     display: none;
     right: -450px;
-    
 }
 
-.slidebar.active {
+.active {
     top: 0;
     right: 0;
-    background-color: rgb(191, 194, 194);
+    background: linear-gradient(to top left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));;
     width: 100%;
     height: 100vh;
     max-width: 450px;
@@ -37,8 +36,16 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: 0.3 ease;
     font-size: x-large;
+}
+
+.close {
+    filter: invert(1);
+    width: 2.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem 0 0;
 }
 
 .nav-bar {
@@ -57,7 +64,7 @@ header {
 
 .nav-bar a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .icons {
@@ -66,7 +73,7 @@ header {
     align-items: center;
     gap: 5rem;
     margin-top: 5rem;
-    filter: brightness(0);
+    filter: brightness(10);
 }
 
 .icons img {
@@ -108,7 +115,7 @@ header {
 
 /*------HERE STARTS "ABOUT.HTML"------*/
 
-.nav-bar2, .icons-bar {
+.icons-bar {
     display: none;
 }
 
@@ -146,6 +153,7 @@ section h2 {
     color: var(--title);
     display: flex;
     align-items: center;
+    grid-column: 1 / 3;
 }
 
 .work, .study {
@@ -167,10 +175,6 @@ section h2 {
     display: flex;
     align-items: center;
     grid-column: 1 / 2;
-}
-
-.job-title, .education-title {
-    grid-column: 1 / 3;
 }
 
 .job-title, .full-time {
@@ -309,8 +313,16 @@ section h2 {
         justify-content: space-between;
     }
 
+    .active {
+        right: -450px;
+    }
+
     .slidebar {
-        display: block;
+        display: inline-block;
+    }
+
+    .close {
+        display: none;
     }
 
     .nav-bar {

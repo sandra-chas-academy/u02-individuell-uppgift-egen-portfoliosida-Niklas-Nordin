@@ -20,6 +20,10 @@ header {
     width: 2rem;
 }
 
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
 .slidebar {
     display: none;
     right: -450px;
@@ -47,6 +51,7 @@ header {
     top: 0;
     right: 0;
     margin: 1rem 1rem 0 0;
+    cursor: pointer;
 }
 
 .nav-bar {

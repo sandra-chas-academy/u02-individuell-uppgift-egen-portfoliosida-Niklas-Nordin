@@ -38,13 +38,6 @@ body {
     font-weight: 500;
 }
 
-hr {
-    height: 2px;
-    background-color: rgba(235, 234, 237, 1);
-    border: none;
-    margin: 1.5rem 0 2rem 0;
-}
-
 footer{
     display: flex;
     text-align: center;

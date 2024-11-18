@@ -37,6 +37,7 @@ header {
     flex-direction: column;
     justify-content: center;
     font-size: x-large;
+    z-index: 99;
 }
 
 .close {
@@ -127,20 +128,33 @@ section h2 {
     font-weight: 700;
 }
 
-.title h2 {
+.about-me-title {
     margin: 3rem 0 2rem 0;
 }
 
-.experience h2, .education h2 {
-    margin: 2rem 0;
+.about-me-title, .about-me-text {
+    transition: opacity 2s ease;
+    opacity: 0;
+}
+
+.my-experience, .my-education {
+    margin-top: 2rem;
+    transition: opacity 2s ease;
+    opacity: 0;
 }
 
 .job, .knowledge {
-    margin: 10px 0;
+    margin-top: 2rem;
     color: var(--title);
     display: grid;
     grid-template-columns: auto 1fr 1fr;
     gap: 5px;
+    position: relative;
+    bottom: -1000px;
+    transition: opacity 4s ease, bottom 2s ease;
+    opacity: 0;
+    border-bottom: 2px solid rgba(235, 234, 237, 1);
+    padding-bottom: 1.5rem;
 }
 
 .job img, .knowledge img {

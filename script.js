@@ -43,10 +43,7 @@ async function experience() {
             </div>
             `;
 
-            myExperience.appendChild(newJob);
-
-            const hr = document.createElement("hr");
-            myExperience.appendChild(hr);
+            myExperience.append(newJob);
 
             console.log(workExperience);
 
@@ -106,10 +103,9 @@ async function educations() {
             </div>
             `;
 
-            educations.appendChild(newStudy);
+            educations.append(newStudy);
 
-            const hr = document.createElement("hr");
-            educations.append(hr);
+            
             console.log(myStudies);
         }
 
@@ -135,3 +131,53 @@ function click() {
     hamburgerMenu.classList.toggle("active");
     slidebar.classList.toggle("active");
 }
+
+// Mina erfarenheter slidar in på sidan när den laddas.
+
+function slide() {
+
+    setTimeout(() => {
+        const showUp = document.querySelectorAll(".about-me-title, .about-me-text, .my-experience");
+
+        showUp.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.opacity = "1";
+            }, index * 500);
+            
+        });
+    }, 300);
+
+    setTimeout(() => {
+        const slideUp = document.querySelectorAll(".job");
+
+        slideUp.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.bottom = "0";
+                element.style.opacity = "1";
+            }, index * 300);
+            
+        });
+    }, 1000);
+
+    setTimeout(() => {
+        const elements = document.querySelectorAll(".my-education");
+        elements.forEach((element) => {
+            element.style.opacity = "1";
+        });
+    }, 3000);
+
+    setTimeout(() => {
+        const slideUp = document.querySelectorAll(".knowledge");
+
+        slideUp.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.bottom = "0";
+                element.style.opacity = "1";
+            }, index * 300);
+            
+        });
+    }, 2500);
+        
+};
+
+document.addEventListener("DOMContentLoaded", slide);

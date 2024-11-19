@@ -1,19 +1,23 @@
+
+
 // Importerar mina jobb via experience.json
 async function experience() {
     
-    try {
+    const myExperience = document.getElementById("experience");
+
+    if (myExperience === null) {
+        console.log("Elementet 'experience' finns inte på denna sida. Scriptet avslutas.");
+        return;
+    }
+    
+    try { 
         const response = await fetch("../experience.json");
 
         if(!response.ok) {
             throw new Error("Kunde inte ladda data...");
         }
-
+ 
         const data = await response.json();
-        const myExperience = document.getElementById("experience");
-        const myExperience2 = document.createElement("div");
-        myExperience2.id = "experience2";
-
-
         const jobs = data.educations.jobs;
 
 
@@ -44,12 +48,8 @@ async function experience() {
             `;
 
             myExperience.append(newJob);
-
             console.log(workExperience);
-
         }
-
-
 
     } catch (error) {
         console.error("Error: Fel vid hämtning av data", error);
@@ -62,6 +62,13 @@ experience();
 
 async function educations() {
 
+    const educations = document.getElementById("education");
+
+    if (!educations) {
+        console.log("Elementet 'education' finns inte på denna sida. Scriptet avslutas.");
+        return;
+    }
+
     try {
         const responseEducation = await fetch("../experience.json");
 
@@ -70,10 +77,6 @@ async function educations() {
         }
 
         const dataEducation = await responseEducation.json();
-
-        const educations = document.getElementById("education");
-        // const educations = document.createElement("div");
-        // educations.classList.add("education");
         const study = dataEducation.educations.studies;
 
         for(i = 0; i < study.length; i++) {
@@ -104,8 +107,6 @@ async function educations() {
             `;
 
             educations.append(newStudy);
-
-            
             console.log(myStudies);
         }
 
@@ -181,3 +182,40 @@ function slide() {
 };
 
 document.addEventListener("DOMContentLoaded", slide);
+
+
+
+// Projects, hämta data från min projekt på Github, m.h.a. en API.
+
+
+async function GithubProjects() {
+    
+    try {
+
+        const response = await fetch("https:api.github.com/users/Niklas-Nordin/repos");
+                
+
+        if(!response.ok) {
+            throw new Error("Error, kunde inte fetcha...");
+        }
+
+        const data = await response.json();
+        // Här skappas elementen...
+
+        
+
+
+    } catch (error) {
+        console.error("Error, kunde inte ladda in data...", error);
+    }
+
+}
+GithubProjects()
+
+function hej() {
+    const projects = document.getElementById("projects");
+        const nyDiv = document.createElement("p");
+        projects.append(nyDiv);
+        nyDiv.innerHTML = "hej";
+        console.log(data);
+}

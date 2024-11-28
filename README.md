@@ -36,7 +36,7 @@ Med hjälp av javascript kan man utveckla interaktiva och dynamiska webbsidor. D
 
 Svar:
 JSON står för "JavaScrip Object Notation" och det används till syfte för att
-skicka och ta emot data mellan klienten och servern. Det används även för att strukturera datan.
+skicka och ta emot data mellan klienten och servern. Det används även för att strukturera datan. Det är ett lättviktigt format som är lätt att läsa och skriva våde för mmänniskor och datorer.
 
 |---------------------------------------------------------|
 

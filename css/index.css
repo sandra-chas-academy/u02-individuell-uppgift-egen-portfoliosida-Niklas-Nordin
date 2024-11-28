@@ -276,12 +276,17 @@ section h2 {
 }
 
 .all-cards {
-    box-shadow: 0 2px 20px 0px rgba(99, 143, 224, 0.5);
+    box-shadow: 0 2px 20px 0px rgba(84, 163, 209, 0.5);
     border-radius: 20px;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+}
+
+.all-cards:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(210, 104, 224, 0.5) 0 2px 20px 0;
 }
 
 .card-img {
@@ -476,8 +481,6 @@ section h2 {
         max-width: 400px;
         flex: 0 0 30%;
         border-radius: 20px;
-        box-shadow: 0 2px 60px 0px rgba(138, 165, 216, 0.5);
-
     }
 
     .title-info {

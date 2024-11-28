@@ -32,7 +32,7 @@ header {
 .active {
     top: 0;
     right: 0;
-    background: linear-gradient(to top left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));;
+    background: linear-gradient(to top left, rgb(218, 95, 183), rgb(65, 190, 228));
     width: 100%;
     height: 100vh;
     max-width: 450px;
@@ -70,7 +70,7 @@ header {
 
 .nav-bar a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .icons {
@@ -158,7 +158,7 @@ section h2 {
     bottom: -1000px;
     transition: opacity 4s ease, bottom 2s ease;
     opacity: 0;
-    border-bottom: 2px solid rgba(235, 234, 237, 1);
+    border-bottom: 2px solid rgba(160, 159, 159, 0.274);
     padding-bottom: 1.5rem;
 }
 
@@ -242,6 +242,31 @@ section h2 {
 
 /* ------ HERE STARTS PROJECTS.HTML ------ */
 
+.loading {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border-top: 5px solid rgb(0, 183, 255);
+    background: linear-gradient(to left, rgba(231, 15, 170, 0.753), rgba(0, 192, 253, 1));
+    mask: radial-gradient(transparent 50%, white 80%);
+    animation: spin 1s linear infinite;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.title h2 {
+    margin: 2rem 0;
+}
+
 .title-info {
     display: none;
 }
@@ -254,11 +279,14 @@ section h2 {
     box-shadow: 0 2px 20px 0px rgba(99, 143, 224, 0.5);
     border-radius: 20px;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .card-img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -267,14 +295,16 @@ section h2 {
 }
 
 .card-info {
+    height: 180px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 2rem;
     padding: 1rem;
     font-size: 14px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    background-color: white;
 }
 
 .card-link {

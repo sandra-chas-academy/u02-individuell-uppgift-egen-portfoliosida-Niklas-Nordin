@@ -48,7 +48,6 @@ async function experience() {
             `;
 
             myExperience.append(newJob);
-            console.log(workExperience);
         }
 
     } catch (error) {
@@ -107,7 +106,6 @@ async function educations() {
             `;
 
             educations.append(newStudy);
-            console.log(myStudies);
         }
 
 
@@ -222,7 +220,6 @@ githubProjects()
 const loadingIcon = document.getElementById("loading");
 const allCards = document.querySelectorAll(".all-cards");
 const projects = document.getElementById("projects");
-projects.style.display = "none";
 
 function createCards(data) {
     
@@ -233,7 +230,7 @@ function createCards(data) {
 
 
         if (!projects) {
-            console.log("Elementet 'education' finns inte på denna sida. Scriptet avslutas.");
+            console.log("Elementet 'createCards' finns inte på denna sida. Scriptet avslutas.");
             return;
         }
 
@@ -263,26 +260,21 @@ function createCards(data) {
         h3.textContent = data[i].name;
         p.textContent = data[i].description;
 
-        console.log(data);
-        
+        // console.log(data);
+        projects.style.display = "none";
 
+        setTimeout(() => {
+    
+            loadingIcon.style.display = "none";
+            projects.style.display = "";
+        
+        }, 1000);
         // 
     }
 
-    
+
 }
 
 const lastCreated = function create(a, b) {
     return new Date(b.created_at) - new Date(a.created_at)
 };
-
-
-projects.style.display = "none";
-
-
-setTimeout(() => {
-    
-    loadingIcon.style.display = "none";
-    projects.style.display = "";
-
-}, 1000);

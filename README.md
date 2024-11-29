@@ -1,3 +1,7 @@
+Netlify link: https://about-niklas-nordin.netlify.app
+
+|---------------------------------------------------------|
+
 - Sammanfattning:
 
 Detta är min andra individuella uppgift - U02.

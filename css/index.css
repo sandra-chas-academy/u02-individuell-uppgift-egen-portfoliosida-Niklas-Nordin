@@ -336,8 +336,7 @@ section h2 {
     color: transparent;
 }
 
-.got-questions {
-    margin: 4rem 0 1rem 0;
+.contact-information {
     font-size: 16pt;
 }
 
@@ -347,10 +346,6 @@ section h2 {
     align-items: center;
     gap: 1rem;
 }
-/* 
-.phone {
-    margin-top: 2rem;
-} */
 
 .contact-info {
     font-size: 20pt;
@@ -512,7 +507,7 @@ section h2 {
         margin-top: 10rem;
     }
 
-    .got-questions, .contact-info {
+    .contact-information, .contact-info {
         font-size: 58px;
     }
 

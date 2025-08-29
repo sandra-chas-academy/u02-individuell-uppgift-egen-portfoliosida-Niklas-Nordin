@@ -16,6 +16,14 @@ header {
     align-items: center;
 }
 
+.left-corner-logo {
+    border: 2px solid; /* tjocklek */
+    /* border-right: 3px solid; */
+    border-image: linear-gradient(to left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1)) 1;
+    box-shadow: rgba(137, 166, 228, 0.8) 4px 4px 5px;
+    padding: 0.1rem 0.7rem;
+}
+
 .hamburger-menu {
     width: 2rem;
 }
@@ -357,10 +365,6 @@ section h2 {
 
 @media (min-width: 768px) {
 
-    .github-icon {
-        order: -1;
-    }
-
     .starting {
         display: flex;
         flex-direction: row;
@@ -383,7 +387,7 @@ section h2 {
     .nav-bar {
         flex-direction: row;        
         position: relative;
-        right:7rem;
+        right: 5rem;
         justify-content: space-evenly;
         gap: 0rem;
         width: 55vw;
@@ -400,9 +404,9 @@ section h2 {
     }
 
     .icons {
-        gap: 1.5vw;
+        gap: 2.5vw;
         position: absolute;
-        top: 1rem;
+        top: 1.2rem;
         right: 5rem;
         margin-top: 1.5rem;
     }

@@ -99,10 +99,6 @@ header {
     margin: 8rem 0 1rem 0;
 }
 
-.me h3 {
-    width: 70%;
-}
-
 .me span {
     background: var(--bluepurple);
     background-clip: text;
@@ -117,7 +113,7 @@ header {
 }
 
 .me img {
-    width: 30%;
+    width: 350px;
     border-radius: 50%;
     border: 9px solid transparent;
     background: linear-gradient(to bottom, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1)) border-box;
@@ -422,10 +418,14 @@ section h2 {
         margin-top: 12rem;
         font-size: 50px;
     }
+    
+    .me h3 {
+        width: 65%;
+    }
 
     .me img {
         min-width: 300px;
-        width: 30%;
+        width: 35%;
     }
 
     /* ------HERE STARTS TECHSTACK.HTML ------ */

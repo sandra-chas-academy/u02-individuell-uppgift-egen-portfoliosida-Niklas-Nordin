@@ -169,7 +169,7 @@ function slide() {
 
 document.addEventListener("DOMContentLoaded", slide);
 
-// Projects, hämta data från min projekt på Github, m.h.a. en API.
+// Get my github projects
 
 async function githubProjects() {
   try {
@@ -247,3 +247,5 @@ function createCards(data) {
 const lastCreated = function create(a, b) {
   return new Date(b.created_at) - new Date(a.created_at);
 };
+
+document.getElementsByClassName("year")[0].textContent = new Date().getFullYear();

@@ -113,7 +113,7 @@ header {
     margin-top: 1.5rem;
 }
 
-.love-coffe {
+.name {
     background: var(--footer);
     background-clip: text;
     color: transparent;
@@ -347,9 +347,14 @@ section h2 {
     align-items: center;
     gap: 1rem;
 }
+/* 
+.phone {
+    margin-top: 2rem;
+} */
 
 .contact-info {
     font-size: 20pt;
+    margin-top: 2rem;
 }
 
 /* ----DESKTOP-VERSION STARTS HERE----

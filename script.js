@@ -171,81 +171,160 @@ document.addEventListener("DOMContentLoaded", slide);
 
 // Get my github projects
 
-async function githubProjects() {
-  try {
-    const response = await fetch(
-      "https://api.github.com/users/Niklas-Nordin/repos"
-    );
+// async function githubProjects() {
+//   try {
+//     const response = await fetch(
+//       "https://api.github.com/users/Niklas-Nordin/repos"
+//     );
 
-    if (!response.ok) {
-      throw new Error("Error, kunde inte fetcha...");
-    }
+//     if (!response.ok) {
+//       throw new Error("Error, kunde inte fetcha...");
+//     }
+
+//     const data = await response.json();
+//     // Här skappas elementen...
+
+//     // Skapa kort baserat på sorterad data
+//     createCards(data.sort(lastCreated));
+//   } catch (error) {
+//     console.error("Error, kunde inte ladda in data...", error);
+//   }
+// }
+// githubProjects();
+
+// async function getPreviewImage(owner, repo) {
+//   try {
+//     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`);
+//     if (!res.ok) {
+//       throw new Error("Ingen README");
+//     }
+
+//     const data = await res.json();
+//     const md = atob(data.content); // decode base64 → markdown text
+
+//     // hitta första bild i README
+//     const match = md.match(/!\[.*?\]\((.*?)\)/);
+//     if (match && match[1]) {
+//       let url = match[1];
+
+//       // om relativ länk (t.ex. ./screenshot.png) → gör den absolut
+//       if (!url.startsWith("http")) {
+//         url = `https://raw.githubusercontent.com/${owner}/${repo}/${data.default_branch || "main"}/${url.replace(/^\.?\//, "")}`;
+//       }
+//       return url;
+//     }
+//   } catch (err) {
+//     console.warn(`Ingen README-bild för ${repo}`, err);
+//   }
+
+//   // fallback: GitHub Open Graph
+//   return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+// }
+
+// const allCards = document.querySelectorAll(".all-cards");
+
+const projectsContainer = document.getElementById("projects");
+const loadingIcon = document.getElementById("loading");
+
+async function loadProjects() {
+  try {
+    const response = await fetch("../myProjects.json"); // Anpassa sökväg
+    if (!response.ok) throw new Error("Kunde inte ladda projekten");
 
     const data = await response.json();
-    // Här skappas elementen...
+    const projects = data.projects;
 
-    // Skapa kort baserat på sorterad data
-    createCards(data.sort(lastCreated));
-  } catch (error) {
-    console.error("Error, kunde inte ladda in data...", error);
-  }
-}
-githubProjects();
+    projectsContainer.innerHTML = ""; // Rensa tidigare innehåll
 
-const loadingIcon = document.getElementById("loading");
-const allCards = document.querySelectorAll(".all-cards");
-const projects = document.getElementById("projects");
+    projects.forEach(proj => {
+      const newCard = document.createElement("article");
+      const cardImg = document.createElement("img");
+      const cardInfo = document.createElement("div");
+      const h3 = document.createElement("h3");
+      const p = document.createElement("p");
 
-function createCards(data) {
-  // loading();
+      newCard.classList.add("all-cards");
+      cardImg.classList.add("card-img");
+      cardInfo.classList.add("card-info");
+      h3.classList.add("card-title");
+      p.classList.add("card-sum");
 
-  for (let i = 0; i < data.length; i++) {
-    if (!projects) {
-      console.log(
-        "Elementet 'createCards' finns inte på denna sida. Scriptet avslutas."
-      );
-      return;
-    }
+      cardImg.src = proj.img;
+      h3.textContent = proj.name;
+      p.textContent = proj.description;
 
-    const newCard = document.createElement("article");
-    const cardImg = document.createElement("img");
-    const cardInfo = document.createElement("div");
-    const h3 = document.createElement("h3");
-    const p = document.createElement("p");
+      newCard.addEventListener("click", () => {
+        window.open(proj.url, "_blank");
+      });
 
-    newCard.classList.add("all-cards");
-    cardImg.classList.add("card-img");
-    cardInfo.classList.add("card-info");
-    h3.classList.add("card-title");
-    p.classList.add("card-sum");
-
-    projects.append(newCard);
-    newCard.append(cardImg, cardInfo);
-    cardInfo.append(h3, p);
-    newCard.addEventListener("click", () => {
-      let htmlUrl = data[i].html_url; // Hämta länken från JSON
-      if (htmlUrl) {
-        window.open(htmlUrl, "_blank");
-      }
+      newCard.append(cardImg, cardInfo);
+      cardInfo.append(h3, p);
+      projectsContainer.appendChild(newCard);
     });
 
-    cardImg.src = "../img/Projects/ScriptCode.jpg";
-    h3.textContent = data[i].name;
-    p.textContent = data[i].description;
-
-    // console.log(data);
-    projects.style.display = "none";
-
-    setTimeout(() => {
-      loadingIcon.style.display = "none";
-      projects.style.display = "";
-    }, 1000);
-    //
+    loadingIcon.style.display = "none";
+    projectsContainer.style.display = "";
+  } catch (err) {
+    console.error("Fel vid laddning av projekt:", err);
   }
 }
 
-const lastCreated = function create(a, b) {
-  return new Date(b.created_at) - new Date(a.created_at);
-};
+loadProjects();
 
-document.getElementsByClassName("year")[0].textContent = new Date().getFullYear();
+// function createCards(data) {
+//   // loading();
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (!projects) {
+//       console.log(
+//         "Elementet 'createCards' finns inte på denna sida. Scriptet avslutas."
+//       );
+//       return;
+//     }
+
+//     const newCard = document.createElement("article");
+//     const cardImg = document.createElement("img");
+//     const cardInfo = document.createElement("div");
+//     const h3 = document.createElement("h3");
+//     const p = document.createElement("p");
+
+//     newCard.classList.add("all-cards");
+//     cardImg.classList.add("card-img");
+//     cardInfo.classList.add("card-info");
+//     h3.classList.add("card-title");
+//     p.classList.add("card-sum");
+
+//     projects.append(newCard);
+//     newCard.append(cardImg, cardInfo);
+//     cardInfo.append(h3, p);
+//     newCard.addEventListener("click", () => {
+//       let htmlUrl = data[i].html_url; // Hämta länken från JSON
+//       if (htmlUrl) {
+//         window.open(htmlUrl, "_blank");
+//       }
+//     });
+
+//         getPreviewImage(data[i].owner.login, data[i].name).then((url) => {
+//       cardImg.src = url;
+//     });
+
+//     cardImg.src = "../img/Projects/ScriptCode.jpg";
+//     h3.textContent = data[i].name;
+//     p.textContent = data[i].description;
+
+//     // console.log(data);
+//     projects.style.display = "none";
+
+//     setTimeout(() => {
+//       loadingIcon.style.display = "none";
+//       projects.style.display = "";
+//     }, 1000);
+//     //
+//   }
+// }
+
+// const lastCreated = function create(a, b) {
+//   return new Date(b.created_at) - new Date(a.created_at);
+// };
+
+// document.getElementsByClassName("year")[0].textContent = new Date().getFullYear();

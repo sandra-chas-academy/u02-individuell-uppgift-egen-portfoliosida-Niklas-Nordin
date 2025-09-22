@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "name": "The Job Chaser",
+      "description": "A job application tracker web app built with React (context & redux) and TypeScript. It allows users to sign up/sign in and search, filter and sort jobs.",
+      "img": "../img/Projects/jobChaserProject.png",
+      "url": "https://github.com/Niklas-Nordin/JobChaser"
+    },
+    {
+      "name": "Todo List TypeScript",
+      "description": "This is a todo list application built with TypeScript and local storage. It allows users to add, delete, edit and mark tasks as completed.",
+      "img": "../img/Projects/ToDoList_TypeScript.png",
+      "url": "https://github.com/Niklas-Nordin/ToDoList-TypeScript"
+    },
+    {
+      "name": "Todo List",
+      "description": "En ToDo-applikation med lokal lagring",
+      "img": "../img/Projects/my_first_backend.png",
+      "url": "https://github.com/Niklas-Nordin/My_first_backend"
+    },
+    {
+      "name": "Date Counter",
+      "description": "This is a simple date counter app that calculates the time thats left until a specific date.",
+      "img": "../img/Projects/dateCounter.png",
+      "url": "https://github.com/Niklas-Nordin/DateCounter"
+    }
+  ]
+}

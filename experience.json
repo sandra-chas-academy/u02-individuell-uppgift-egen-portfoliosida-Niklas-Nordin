@@ -7,7 +7,7 @@
         ],
         "studies": [
             {"title":"Fullstack Javascript", "formOfStudy":"Full Time", "school":"Chas Academy", "timeForStudies":"Sep 2024 - now", "location":"Globen Shopping Center"},
-            {"title":"Fullstack Web Developer", "formOfStudy":"Full Time", "school":"Udemy", "timeForStudies":"Mars 2024 - now", "location":"Distance"},
+            {"title":"Fullstack Web Developer, React", "formOfStudy":"Full Time", "school":"Udemy", "timeForStudies":"Mars 2024 - now", "location":"Distance"},
             {"title":"CPR", "formOfStudy":"Temporary", "school":"HLR-Rådet", "timeForStudies":"2021", "location":"Home"},
             {"title":"High School", "formOfStudy":"Full Time", "school":"Cybergymnasiet", "timeForStudies":"2010 - 2013", "location":"Odenplan/Stockholm"}
         ]

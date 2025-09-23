@@ -249,17 +249,17 @@ section h2 {
 
 .logos {
     display: flex;
-    flex-wrap: wrap;       /* Tillåter flera rader */
-    justify-content: flex-start; /* Börjar från vänster */
-    gap: 2rem 3rem;        /* Rad- och kolumnmellanrum */
+    flex-wrap: wrap;       
+    justify-content: flex-start; 
+    gap: 2rem 3rem; 
     margin: 2rem 0;
 }
 
 .li-logo {
     display: flex;   
-    align-items: center;    /* Vertikal centering */
-    gap: 0.5rem;            /* Mellanrum mellan ikon och text */
-    flex: 0 0 calc(33.333% - 2rem); /* Tar 1/3 av raden minus gap */
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0 0 calc(33.333% - 2rem);
 }
 
 .li-logo img {
@@ -303,7 +303,11 @@ section h2 {
 }
 
 .title-info {
-    display: none;
+    margin-bottom: 3rem;
+}
+
+.title-info-2 {
+    margin-bottom: 6rem;
 }
 
 .projects {
@@ -317,6 +321,7 @@ section h2 {
     flex-direction: column;
     margin: 0 auto 2rem auto;
     cursor: pointer;
+    min-width: 300px;
     max-width: 500px;
 }
 
@@ -547,7 +552,7 @@ section h2 {
     }
 
     .all-cards {
-        min-width: 260px;
+        min-width: 300px;
         max-width: 300px;
         flex: 0 0 30%;
         border-radius: 20px;
@@ -563,7 +568,6 @@ section h2 {
 
     .title-info {
         display: inline-block;
-        margin-bottom: 6rem;
     }
 
     .title h2 {

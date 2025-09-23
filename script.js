@@ -328,3 +328,6 @@ loadProjects();
 // };
 
 // document.getElementsByClassName("year")[0].textContent = new Date().getFullYear();
+
+const yearElement = document.querySelector(".year");
+yearElement.textContent = new Date().getFullYear();

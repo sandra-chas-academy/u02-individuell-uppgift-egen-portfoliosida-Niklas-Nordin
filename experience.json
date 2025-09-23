@@ -1,0 +1,16 @@
+{
+    "educations": {
+        "jobs": [
+            {"title":"Driver / Warehouse Worker", "formOfEmployment":"Full Time", "company":"Mathem I Sverige AB", "timeOfEmployment":"Nov 2016 - Now", "location":"Larsboda"},
+            {"title":"Restaurant Assistant", "formOfEmployment":"Full Time", "company":"Fazer Amica AB", "timeOfEmployment":"Sep 2014 - 2016", "location":"Tyresö"},
+            {"title":"Warehouse Worker", "formOfEmployment":"Full Time", "company":"Bageriprodukter AB", "timeOfEmployment":"April 2015 - 2015", "location":"Tumba"}
+        ],
+        "studies": [
+            {"title":"Fullstack Javascript", "formOfStudy":"Full Time", "school":"Chas Academy", "timeForStudies":"Sep 2024 - now", "location":"Globen Shopping Center"},
+            {"title":"Fullstack Web Developer, React", "formOfStudy":"Full Time", "school":"Udemy", "timeForStudies":"Mars 2024 - now", "location":"Distance"},
+            {"title":"CPR", "formOfStudy":"Temporary", "school":"HLR-Rådet", "timeForStudies":"2021", "location":"Home"},
+            {"title":"High School", "formOfStudy":"Full Time", "school":"Cybergymnasiet", "timeForStudies":"2010 - 2013", "location":"Odenplan/Stockholm"}
+        ]
+    }
+        
+}

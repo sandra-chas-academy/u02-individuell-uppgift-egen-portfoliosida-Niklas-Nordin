@@ -1,0 +1,57 @@
+:root {
+    --bluepurple: linear-gradient(to left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));
+    --bluepurple-topleft: linear-gradient(to top left, rgba(231, 15, 170, 1), rgba(0, 192, 253, 1));
+    --title: rgba(102, 102, 102, 1);
+    --info: rgba(167, 167, 167, 1);
+    --button-text: rgba(1, 140, 15, 1);
+    --button-color: rgba(215, 255, 224, 1);
+    --hr-line: rgba(235, 234, 237, 1);
+    --footer: linear-gradient(to left, rgba(231, 15, 170, 1), rgba(19, 176, 245, 1));
+    --blue-text: rgba(66, 68, 110, 1);
+    --job-title: rgba(102, 102, 102, 1);
+    --primary-background-color: 255, 255, 255;
+    --primary-background-color-dark: black;
+    --primary-text-color: black;
+    --primary-text-color-dark: white;
+}
+
+body {
+    margin: 1rem;
+    min-width: 300px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    min-height: 100vh;
+    background: linear-gradient(to top left, rgba(11, 159, 218, 0.2),  rgba(64, 173, 216, 0.05), rgba(11, 159, 218, 0.15));}
+
+.left-corner-logo {
+    font-family: consolas, 'Courier New', Courier, monospace
+}
+
+.left-corner-logo h3 {
+    font-size: 1rem;
+}
+
+.job, .knowledge {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+footer{
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+    min-height: 50vh;
+}
+
+.footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin: 2rem 5rem;
+        color: var(--blue-text);
+    }
+}

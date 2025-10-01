@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "name": "Trullo",
+      "description": "Here can you create projects, add tasks to them. You can also assign users to the tasks. This project follows the CRUD operation. For now, it's just a backend, but frontend will be added later. You can find info to test the endpoints in README.md",
+      "img": "../img/Projects/trulloProject.png",
+      "url": "https://github.com/Niklas-Nordin/Trullo"
+    },
+    {
       "name": "The Job Chaser",
       "description": "A job application tracker web app built with React (context & redux) and TypeScript. It allows users to sign up/sign in and search, filter and sort jobs.",
       "img": "../img/Projects/jobChaserProject.png",
